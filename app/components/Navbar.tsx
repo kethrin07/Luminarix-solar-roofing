@@ -11,8 +11,8 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="brand" style={{ display: "flex", alignItems: "center" }}>
           <img
-            src="https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/625ee1044665a23cf38c6823_Ameco%20Wordmark%20Black.svg"
-            alt="AMECO Solar"
+            src="	https://luminarix-media.com/lovable-uploads/9ae4ae4c-571a-4121-871c-67575f91198f.png"
+            alt="Luminarix Solar"
             className="logo"
           />
         </Link>
@@ -22,7 +22,7 @@ export default function Navbar() {
           <button
             className="hamburger-menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            style={{ background: "none", border: "none" }}
+            style={{ background: "none", border: "none",  color: "#1f3943"  }}
           >
             <div>Menu</div>
             <div className="burger-bun">
@@ -178,15 +178,15 @@ export default function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 991px) {
-          .desktop-nav { display: none !important; }
-          .hamburger-menu { display: flex !important; }
-        }
-        @media (min-width: 992px) {
-          .desktop-nav { display: flex !important; }
-          .hamburger-menu { display: none !important; }
-        }
-      `}</style>
+      @media (max-width: 991px) {
+        .desktop-nav { display: none !important; }
+        .hamburger-menu { display: flex !important; }
+      }
+      @media (min-width: 992px) {
+        .desktop-nav { display: flex !important; align-items: stretch; }
+        .hamburger-menu { display: none !important; }
+      }
+    `}</style>
     </>
   );
 }

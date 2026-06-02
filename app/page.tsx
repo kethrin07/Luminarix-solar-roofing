@@ -24,7 +24,7 @@ export default function Home() {
         <ExperienceSection />
         <AboutUsSection />
         <CtaBlock />
-        <ConsultationSection />
+        {/* <ConsultationSection /> */}
         <Footer />
       </div>
     </>
