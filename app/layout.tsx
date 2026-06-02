@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Solar Panel Installation | Solar Panel Company | AMECO Solar",
-  description: "Explore AMECO Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
+  title: "Solar Panel Installation | Solar Panel Company | Luminarix Solar",
+  description: "Explore Luminarix Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
   openGraph: {
-    title: "Solar Panel Installation | Solar Panel Company | AMECO Solar",
-    description: "Explore AMECO Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
+    title: "Solar Panel Installation | Solar Panel Company | Luminarix Solar",
+    description: "Explore Luminarix Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
     images: ["https://i.ibb.co/BN5FYKK/Asset-132-3x.png"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solar Panel Installation | Solar Panel Company | AMECO Solar",
-    description: "Explore AMECO Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
+    title: "Solar Panel Installation | Solar Panel Company | Luminarix Solar",
+    description: "Explore Luminarix Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
     images: ["https://i.ibb.co/BN5FYKK/Asset-132-3x.png"],
   },
 };
