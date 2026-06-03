@@ -4,12 +4,18 @@ export default function AboutUsSection() {
 
       {/* Left — full-height photo */}
       <div className="about-split-img">
-        <img
-          src="https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/626024eba6dfb0c6b48b4431_About%20Us.jpg"
-          alt="Solar installer at work"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-        />
-      </div>
+      <img
+        src="https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/626024eba6dfb0c6b48b4431_About%20Us.jpg"
+        alt="Solar installer at work"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
+      {/* Orange tint — stronger on right, fades left */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to right, rgba(200,90,20,0.55) 0%, rgba(180,70,10,0.25) 50%, rgba(160,60,0,0.05) 100%)',
+        pointerEvents: 'none',
+      }} />
+     </div>
 
       {/* Right — content on whitesmoke bg */}
       <div className="about-split-content">
