@@ -372,25 +372,21 @@ a { color: inherit; text-decoration: inherit; }
   z-index: 0;
   pointer-events: none;
 }
-.luminarix-svg {
-  width: 100%;
-  max-width: 1100px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-.luminarix-text {
+.luminarix-text-wrap {
   font-family: acumin-pro-wide, sans-serif;
-  font-size: 160px;
+  font-size: clamp(48px, 12vw, 160px);
   font-weight: 900;
-  letter-spacing: -2px;
-  fill: none;
-  stroke: var(--color-secondary);
-  stroke-width: 1.5px;
-  stroke-dasharray: 4000;
-  stroke-dashoffset: 4000;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-secondary);
+  width: 100%;
   opacity: 0;
-  transition: stroke-dashoffset 4s cubic-bezier(0.4,0,0.2,1) 0.2s, opacity 0.5s ease 0.2s;
+  transition: opacity 1s ease 0.2s;
+}
+.reveal.revealed .luminarix-text-wrap {
+  opacity: 1;
 }
 
 /* Grid */
@@ -404,15 +400,21 @@ a { color: inherit; text-decoration: inherit; }
 }
 
 /* Left image */
-.green-energy-img-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.green-energy-svg {
+.green-energy-img {
   width: 100%;
-  max-width: 480px;
+  max-width: 460px;
   height: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .green-energy-img {
+    max-width: 280px;
+  }
+  .green-energy-img-wrap {
+    justify-content: center;
+    padding-right: 0;
+  }
 }
 
 /* Right text */
@@ -1607,4 +1609,34 @@ a { color: inherit; text-decoration: inherit; }
 .reveal-left.revealed {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Drop-in from above animation */
+.reveal-drop {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: opacity 1.2s ease, transform 1.8s cubic-bezier(0.34,1.1,0.64,1);
+}
+.reveal-drop.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.green-energy-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding-right: 20px;
+}
+.green-energy-img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+.reveal.revealed .luminarix-text {
+  stroke-dashoffset: 0;
+  opacity: 1;
 }

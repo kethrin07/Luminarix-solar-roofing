@@ -1,21 +1,21 @@
 import { useEffect, useRef } from 'react'
 
-export function useReveal(className = 'revealed') {
+export function useReveal(threshold = 0.25) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          ref.current?.classList.add(className)
-          observer.disconnect() // stop watching once revealed
+          ref.current?.classList.add('revealed')
+          observer.disconnect()
         }
       },
-      { threshold: 0.25 }
+      { threshold }
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
-  }, [className])
+  }, [threshold])
 
   return ref
 }
