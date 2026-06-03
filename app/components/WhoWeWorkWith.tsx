@@ -1,10 +1,25 @@
+'use client'
+import { useEffect, useRef } from 'react'
+
 export default function WhoWeWorkWith() {
+  const ref = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) ref.current?.classList.add('visible')
+      },
+      { threshold: 0.15 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="section wwww-section">
+    <section className="section wwww-section" ref={ref}>
       <div className="wrapper">
 
-        {/* Pretitle */}
-        <div className="margin-m">
+        <div className="margin-m wwww-pretitle">
           <h2 className="pretitle">
             <span className="text-color-secondary">
               <strong>Driving the Change to A Clean Future</strong>
@@ -12,8 +27,7 @@ export default function WhoWeWorkWith() {
           </h2>
         </div>
 
-        {/* Large statement text */}
-        <div className="margin-xxl">
+        <div className="margin-xxl wwww-statement-wrap">
           <p className="wwww-statement">
             Join the growing community of environmentally responsible homeowners and businesses
             by choosing Luminarix Solar &amp; Roofing for your energy solutions. We provide expert
@@ -21,10 +35,8 @@ export default function WhoWeWorkWith() {
           </p>
         </div>
 
-        {/* Work cards */}
         <div className="wwww-grid">
-
-          <a href="/customers/residential" className="wwww-card">
+          <a href="/customers/residential" className="wwww-card wwww-card--left">
             <div className="wwww-card-icon-wrap">
               <img
                 src="https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/6260108933e4cc29d1a0b928_Ameco-Residential.svg"
@@ -67,8 +79,8 @@ export default function WhoWeWorkWith() {
               </div>
             </div>
           </a>
-
         </div>
+
       </div>
     </section>
   )
