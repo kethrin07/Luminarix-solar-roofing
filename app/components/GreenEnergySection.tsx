@@ -1,25 +1,55 @@
 'use client'
+import { useEffect, useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 export default function GreenEnergySection() {
-  const headingRef = useReveal(0.2)
+  const svgRef = useRef<SVGTextElement>(null)
   const imgRef = useReveal(0.2)
   const textRef = useReveal(0.3)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const text = svgRef.current
+          if (text) {
+            text.style.strokeDashoffset = '0'
+            text.style.opacity = '1'
+          }
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }
+    )
+    if (svgRef.current) observer.observe(svgRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className="section green-energy-section">
       <div className="wrapper">
 
-        {/* LUMINARIX SVG draw */}
-        <div className="green-energy-heading reveal" ref={headingRef as any}>
-          <div className="luminarix-text-wrap">
-            LUMINARIX
-          </div>
+        <div className="green-energy-heading">
+          <svg
+            viewBox="0 0 1100 180"
+            xmlns="http://www.w3.org/2000/svg"
+            className="luminarix-svg"
+            aria-label="LUMINARIX"
+          >
+            <text
+              ref={svgRef}
+              x="50%"
+              y="155"
+              textAnchor="middle"
+              className="luminarix-text"
+            >
+              LUMINARIX
+            </text>
+          </svg>
         </div>
 
         <div className="green-energy-grid">
 
-          {/* Left: image drops in from above */}
           <div ref={imgRef as any} className="green-energy-img-wrap reveal-drop">
             <img
               src="/green-energy-illustration.png"
@@ -28,7 +58,6 @@ export default function GreenEnergySection() {
             />
           </div>
 
-          {/* Right: text slides up */}
           <div ref={textRef as any} className="green-energy-text reveal">
             <div className="margin-l">
               <div className="green-energy-line" />

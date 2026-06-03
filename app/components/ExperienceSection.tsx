@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import { useReveal } from '../hooks/useReveal'
 
 function useCountUp(target: number, duration: number = 2000, start: boolean = false) {
   const [count, setCount] = useState(0)
@@ -19,55 +20,60 @@ function useCountUp(target: number, duration: number = 2000, start: boolean = fa
   return count
 }
 
+const LOGOS = [
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/68530ed940667cbcf6294973_1.svg' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d65243cbf711fc949bdde3_Group%2010%20(1).png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d6369b153b59f1e045a3a3_T3_SolarRoof_CertifiedInstaller_B%201.png', wide: true },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/6853229eb7611ca37c7d4761_6%20(1).png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/68532276e2cb2304696f13aa_5.png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d3eb51ccfc2b94f60e4a2a_Untitled-design-2-1024x1024%201%20(1).png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/6a06c31e78fcd323bb3c0ae5_RCSP_2026_GOLD%201.png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/685321efbac9b840b2029e9c_4.png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/685322b97fd1d7972c3f3fa9_7.png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d6389b4bb30d2e31bad5ba_T3_Powerwall-Certified-Installer_B-scaled%201.png', wide: true },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/68e4a57c5ec2a3babad0f41c_Frame%2014.png' },
+  { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69eb38b7b1ad520c7336e5b8_Emphase-logo%201.png' },
+]
+
 export default function ExperienceSection() {
-  const ref = useRef<HTMLElement>(null)
-  const [visible, setVisible] = useState(false)
-  const count = useCountUp(7000, 2500, visible)
+  const pretitleRef = useReveal(0.3)
+  const logosRef = useReveal(0.2)
+  const bodyRef = useReveal(0.2)
+  const ctaRef = useReveal(0.3)
+
+  // Counter needs its own observer + useState since value changes every frame
+  const counterRef = useRef<HTMLDivElement>(null)
+  const [countStart, setCountStart] = useState(false)
+  const count = useCountUp(7000, 2500, countStart)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setVisible(true)
+        if (entry.isIntersecting) {
+          setCountStart(true)
+          observer.disconnect()
+        }
       },
       { threshold: 0.3 }
     )
-    if (ref.current) observer.observe(ref.current)
+    if (counterRef.current) observer.observe(counterRef.current)
     return () => observer.disconnect()
   }, [])
 
-  const LOGOS = [
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/68530ed940667cbcf6294973_1.svg' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d65243cbf711fc949bdde3_Group%2010%20(1).png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d6369b153b59f1e045a3a3_T3_SolarRoof_CertifiedInstaller_B%201.png', wide: true },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/6853229eb7611ca37c7d4761_6%20(1).png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/68532276e2cb2304696f13aa_5.png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d3eb51ccfc2b94f60e4a2a_Untitled-design-2-1024x1024%201%20(1).png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/6a06c31e78fcd323bb3c0ae5_RCSP_2026_GOLD%201.png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/685321efbac9b840b2029e9c_4.png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/685322b97fd1d7972c3f3fa9_7.png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69d6389b4bb30d2e31bad5ba_T3_Powerwall-Certified-Installer_B-scaled%201.png', wide: true },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/68e4a57c5ec2a3babad0f41c_Frame%2014.png' },
-    { src: 'https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/69eb38b7b1ad520c7336e5b8_Emphase-logo%201.png' },
-  ]
-
   return (
-    <section className="section exp-section" ref={ref}>
+    <section className="section exp-section">
       <div className="wrapper">
 
-        <div className={`exp-pretitle${visible ? ' exp-visible' : ''}`}>
+        <div ref={pretitleRef as any} className="reveal">
           <h2 className="pretitle text-color-secondary">Our Experience</h2>
         </div>
 
-        <div className={`exp-counter-row${visible ? ' exp-visible' : ''}`}>
-          <div className="exp-big-number">
-            {count.toLocaleString()}+
-          </div>
-          <div className="exp-counter-label">
-            <strong>Solar Systems</strong> Installed
-          </div>
+        <div ref={counterRef} className="exp-counter-row">
+          <div className="exp-big-number">{count.toLocaleString()}+</div>
+          <div className="exp-counter-label"><strong>Solar Systems</strong> Installed</div>
         </div>
 
-        <div className={`exp-logo-grid${visible ? ' exp-visible' : ''}`}>
+        <div ref={logosRef as any} className="exp-logo-grid reveal">
           {LOGOS.map((logo, i) => (
             <div key={i} className="exp-logo-cell">
               <img
@@ -80,7 +86,7 @@ export default function ExperienceSection() {
           ))}
         </div>
 
-        <div className={`exp-body-text${visible ? ' exp-visible' : ''}`}>
+        <div ref={bodyRef as any} className="margin-xxl exp-body-text reveal">
           <p>
             What sets us apart from other solar panel installation companies is our focus on
             sustainability, quality, and customer satisfaction. Luminarix Solar &amp; Roofing has
@@ -101,7 +107,7 @@ export default function ExperienceSection() {
           <br />
         </div>
 
-        <div className={`exp-cta${visible ? ' exp-visible' : ''}`}>
+        <div ref={ctaRef as any} className="reveal">
           <div className="button-wrapper">
             <a href="/our-work">
               <div className="button sob bg-white"><div>Browse Our Work</div></div>

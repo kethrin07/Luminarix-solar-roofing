@@ -372,21 +372,31 @@ a { color: inherit; text-decoration: inherit; }
   z-index: 0;
   pointer-events: none;
 }
-.luminarix-text-wrap {
+.luminarix-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: -40px;
+}
+
+.luminarix-text {
   font-family: acumin-pro-wide, sans-serif;
-  font-size: clamp(48px, 12vw, 160px);
+  font-size: clamp(60px, 12vw, 155px);
   font-weight: 900;
   letter-spacing: -0.02em;
-  line-height: 1;
-  text-align: center;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--color-secondary);
-  width: 100%;
+  fill: none;
+  stroke: var(--color-secondary);
+  stroke-width: 1.2px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
   opacity: 0;
-  transition: opacity 1s ease 0.2s;
+  transition:
+    stroke-dashoffset 4.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+    opacity 0.4s ease 0.1s;
 }
 .reveal.revealed .luminarix-text-wrap {
-  opacity: 1;
+  clip-path: inset(0 0% 0 0);
 }
 
 /* Grid */
@@ -654,21 +664,6 @@ a { color: inherit; text-decoration: inherit; }
 /* ── SOLUTIONS ANIMATIONS ── */
 .section.solutions {
   transition: background-image 1.4s ease;
-}
-.sol-card--left {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.9s ease 0.4s, transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.4s;
-}
-.sol-card--right {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.9s ease 0.65s, transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s;
-}
-.solutions.visible .sol-card--left,
-.solutions.visible .sol-card--right {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ── TOOLS SECTION ── */
@@ -1550,30 +1545,6 @@ a { color: inherit; text-decoration: inherit; }
   .exp-logo-img--wide { height: 56px; max-width: 140px; }
 }
 
-/* ── EXPERIENCE SECTION ANIMATIONS ── */
-.exp-pretitle,
-.exp-counter-row,
-.exp-logo-grid,
-.exp-body-text,
-.exp-cta {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.exp-pretitle    { transition: opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94) 0.1s; }
-.exp-counter-row { transition: opacity 0.8s ease 0.25s, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s; }
-.exp-logo-grid   { transition: opacity 0.8s ease 0.45s, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.45s; }
-.exp-body-text   { transition: opacity 0.8s ease 0.65s, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s; }
-.exp-cta         { transition: opacity 0.7s ease 0.85s, transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94) 0.85s; }
-
-.exp-pretitle.exp-visible,
-.exp-counter-row.exp-visible,
-.exp-logo-grid.exp-visible,
-.exp-body-text.exp-visible,
-.exp-cta.exp-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ── IMPACT LABEL ── */
 .impact-label { display: flex; align-items: center; gap: 16px; }
@@ -1601,6 +1572,16 @@ a { color: inherit; text-decoration: inherit; }
   opacity: 1;
   transform: translateY(0);
 }
+
+.reveal-drop {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: opacity 1.2s ease, transform 1.8s cubic-bezier(0.34,1.1,0.64,1);
+}
+.reveal-drop.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
 .reveal-left {
   opacity: 0;
   transform: translateX(-80px);
@@ -1612,15 +1593,7 @@ a { color: inherit; text-decoration: inherit; }
 }
 
 /* Drop-in from above animation */
-.reveal-drop {
-  opacity: 0;
-  transform: translateY(-80px);
-  transition: opacity 1.2s ease, transform 1.8s cubic-bezier(0.34,1.1,0.64,1);
-}
-.reveal-drop.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
 .green-energy-img-wrap {
   display: flex;
