@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Solar Panel Installation | Solar Panel Company | Luminarix Solar",
     description: "Explore Luminarix Solar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
-    images: ["https://i.ibb.co/BN5FYKK/Asset-132-3x.png"],
+    images: ['/logo.png'],
     type: "website",
   },
   twitter: {
