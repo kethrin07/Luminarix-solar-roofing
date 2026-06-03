@@ -113,7 +113,7 @@ export default function ToolsSection() {
                   <div className="button wob" style={{background:'transparent', borderColor:'rgba(255,255,255,0.5)', color:'#fff'}}>
                     <div>Get An Estimate</div>
                   </div>
-                  <div className="button-shadow" style={{background:'rgba(255,255,255,0.12)'}}/>
+                  <div style={{background:'rgba(255,255,255,0.12)'}}/>
                 </a>
               </div>
             </div>
@@ -142,74 +142,18 @@ export default function ToolsSection() {
             <div className="button-wrapper">
               <a href="/home-visualizer">
                 <div className="button sob bg-whitesmoke"><div>Visualize Your Home</div></div>
-                <div className="button-shadow sob-shadow"/>
+                <div/>
               </a>
             </div>
           </div>
 
           {/* Right: custom SVG house with measurements */}
           <div className="tool-card-img">
-            <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" className="tool-svg tool-svg--house3d">
-              {/* House 3D perspective */}
-              {/* Main body */}
-              <polygon points="80,180 200,110 340,180 340,320 80,320" fill="#e8edf0" stroke="#bcc8ce" strokeWidth="1.5"/>
-              {/* Left side */}
-              <polygon points="30,210 80,180 80,320 30,350" fill="#d0d8dc" stroke="#bcc8ce" strokeWidth="1.5"/>
-              {/* Roof main */}
-              <polygon points="30,210 80,180 200,110 150,140" fill="#c8d4d8" stroke="#bcc8ce" strokeWidth="1.5"/>
-              <polygon points="200,110 340,180 290,150 200,110" fill="#d4dee2" stroke="#bcc8ce" strokeWidth="1.5"/>
-
-              {/* Chimney */}
-              <rect x="255" y="118" width="18" height="35" fill="#c0ccce" stroke="#bcc8ce" strokeWidth="1"/>
-              <rect x="253" y="115" width="22" height="6" fill="#b8c4c8" stroke="#bcc8ce" strokeWidth="0.8"/>
-
-              {/* Windows front */}
-              <rect x="105" y="200" width="44" height="38" rx="2" fill="#a8c4d4" stroke="#8aa8b8" strokeWidth="1"/>
-              <line x1="127" y1="200" x2="127" y2="238" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="105" y1="219" x2="149" y2="219" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <rect x="175" y="200" width="44" height="38" rx="2" fill="#a8c4d4" stroke="#8aa8b8" strokeWidth="1"/>
-              <line x1="197" y1="200" x2="197" y2="238" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="175" y1="219" x2="219" y2="219" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <rect x="245" y="200" width="44" height="38" rx="2" fill="#a8c4d4" stroke="#8aa8b8" strokeWidth="1"/>
-              <line x1="267" y1="200" x2="267" y2="238" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="245" y1="219" x2="289" y2="219" stroke="#8aa8b8" strokeWidth="0.8"/>
-
-              {/* Door */}
-              <rect x="185" y="270" width="36" height="50" rx="3" fill="#98b4c0" stroke="#8aa8b8" strokeWidth="1"/>
-              <circle cx="216" cy="296" r="3" fill="#7a9aaa"/>
-
-              {/* Garage left side */}
-              <rect x="35" y="240" width="38" height="70" rx="2" fill="#c4ced2" stroke="#bcc8ce" strokeWidth="1"/>
-              <line x1="35" y1="255" x2="73" y2="255" stroke="#bcc8ce" strokeWidth="0.8"/>
-              <line x1="35" y1="268" x2="73" y2="268" stroke="#bcc8ce" strokeWidth="0.8"/>
-
-              {/* Measurement lines */}
-              {/* Width measurement */}
-              <line x1="80" y1="338" x2="340" y2="338" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="80" y1="333" x2="80" y2="343" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="340" y1="333" x2="340" y2="343" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <text x="210" y="352" fill="#8aa8b8" fontSize="9" fontFamily="monospace" textAnchor="middle">391 ft²</text>
-
-              {/* Height measurement */}
-              <line x1="356" y1="180" x2="356" y2="320" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="351" y1="180" x2="361" y2="180" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <line x1="351" y1="320" x2="361" y2="320" stroke="#8aa8b8" strokeWidth="0.8"/>
-              <text x="370" y="254" fill="#8aa8b8" fontSize="9" fontFamily="monospace">139 ft</text>
-
-              {/* Smaller measurements */}
-              <text x="96" y="195" fill="#8aa8b8" fontSize="8" fontFamily="monospace">62 ft</text>
-              <text x="170" y="195" fill="#8aa8b8" fontSize="8" fontFamily="monospace">78 ft</text>
-              <text x="244" y="195" fill="#8aa8b8" fontSize="8" fontFamily="monospace">60 ft</text>
-              <text x="38" y="235" fill="#8aa8b8" fontSize="8" fontFamily="monospace">86 ft</text>
-
-              {/* Tree right */}
-              <ellipse cx="385" cy="270" rx="18" ry="24" fill="#c8d8dc" opacity="0.6" stroke="#bcc8ce" strokeWidth="0.8"/>
-              <ellipse cx="385" cy="255" rx="13" ry="17" fill="#d0dce0" opacity="0.6" stroke="#bcc8ce" strokeWidth="0.8"/>
-              <line x1="385" y1="294" x2="385" y2="320" stroke="#bcc8ce" strokeWidth="1.5"/>
-
-              {/* Ground */}
-              <line x1="20" y1="352" x2="400" y2="352" stroke="#bcc8ce" strokeWidth="0.8" opacity="0.5"/>
-            </svg>
+          <img
+            src="https://static.wixstatic.com/media/117722_97dc6b11b2924637b211b2f894a1df84~mv2.gif"
+            alt="Roofing calculator"
+            className="tool-image"
+            />
           </div>
 
         </div>

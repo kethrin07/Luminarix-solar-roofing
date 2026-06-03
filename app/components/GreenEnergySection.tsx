@@ -141,7 +141,7 @@ export default function GreenEnergySection() {
                 <div className="button sob bg-white">
                   <div><span>Learn More</span></div>
                 </div>
-                <div className="button-shadow sob-shadow" />
+                <div/>
               </a>
             </div>
           </div>

@@ -26,7 +26,7 @@ export default function SolutionsSection() {
             <div className="button-wrapper">
               <a href="/solutions/solar">
                 <div className="button sob bg-primary"><div>Learn More</div></div>
-                <div className="button-shadow sob-shadow" />
+                <div/>
               </a>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function SolutionsSection() {
             <div className="button-wrapper">
               <a href="/solutions/roofing">
                 <div className="button tob bg-primary"><div>Learn More</div></div>
-                <div className="button-shadow tob-shadow" />
+                <div/>
               </a>
             </div>
           </div>

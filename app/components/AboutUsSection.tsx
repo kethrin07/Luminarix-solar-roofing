@@ -27,7 +27,7 @@ export default function AboutUsSection() {
           <div className="button-wrapper">
             <a href="/about-us">
               <div className="button sob bg-whitesmoke"><div>Learn More</div></div>
-              <div className="button-shadow sob-shadow"/>
+              <div/>
             </a>
           </div>
           <a href="/careers" className="large-text-link">Join our Team</a>
