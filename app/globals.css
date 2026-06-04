@@ -488,13 +488,12 @@ a { color: inherit; text-decoration: inherit; }
 }
 .button-wrapper:hover .button { transform: translate(-3px, -3px); }
 .button-wrapper:hover .button-shadow { transform: translate(3px, 3px); }
-.button.sob { border-color: var(--color-secondary); }
+.button.sob { border-color: var(--color-secondary); color: var(--color-secondary);}
 .button-shadow.sob-shadow { background: var(--color-secondary);}
 .button.sob.bg-white { background: #fff; color: var(--color-primary); }
-.button.sob.bg-primary { background: var(--color-primary); color: #fff; }
 .button.sob.bg-whitesmoke { background: var(--color-whitesmoke); color: var(--color-primary); }
 
-.button.tob { border-color: var(--color-tertiary); }
+.button.tob { border-color: var(--color-tertiary); color: var(--color-tertiary);}
 .button-shadow.tob-shadow { background: var(--color-tertiary); }
 .button.tob.bg-white { background: #fff; color: var(--color-primary); }
 

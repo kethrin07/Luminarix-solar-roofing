@@ -111,7 +111,7 @@ export default function ExperienceSection() {
           <div className="button-wrapper">
             <a href="/our-work">
               <div className="button sob bg-white"><div>Browse Our Work</div></div>
-              <div className="button-shadow sob-shadow" />
+              <div />
             </a>
           </div>
         </div>
