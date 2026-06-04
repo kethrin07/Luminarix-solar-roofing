@@ -13,7 +13,7 @@ export default function SolutionsSection() {
           <div ref={card1Ref as any} className="solution-card reveal">
             <div className="solution-img-wrap">
               <img
-                src="/solar-solutions.svg"
+                src="/solar-solutions.png"
                 alt="Graphic of solar panels."
                 className="solution-img"
               />
@@ -39,7 +39,7 @@ export default function SolutionsSection() {
           <div ref={card2Ref as any} className="solution-card solution-card--right reveal">
             <div className="solution-img-wrap">
               <img
-                src="/roofing-solutions.svg"
+                src="/roofing-solutions.png"
                 alt="Graphic of roofing tiles."
                 className="solution-img"
               />

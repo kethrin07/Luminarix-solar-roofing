@@ -596,8 +596,8 @@ a { color: inherit; text-decoration: inherit; }
 }
 
 .solution-img {
-  width: 180px;
-  height: 180px;
+  width: 300px;
+  height: 250px;
   object-fit: contain;
   transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.45s ease;
 }
@@ -1598,4 +1598,62 @@ a { color: inherit; text-decoration: inherit; }
 .reveal.revealed .luminarix-text {
   stroke-dashoffset: 0;
   opacity: 1;
+}
+
+
+/* ── MOBILE RESPONSIVE FIXES ── */
+@media (max-width: 767px) {
+
+  /* Solutions */
+  .solutions-grid { grid-template-columns: 1fr; }
+  .solution-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 40px 24px 48px; }
+  .solution-card--right { border-bottom: none; }
+
+  /* Who We Work With */
+  .wwww-grid { grid-template-columns: 1fr; }
+  .wwww-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .wwww-card--right { border-bottom: none; }
+
+  /* Green energy */
+  .green-energy-grid { grid-template-columns: 1fr; gap: 32px; }
+  .green-energy-img-wrap { justify-content: center; padding-right: 0; }
+
+  /* Tools */
+  .tools-header { grid-template-columns: 1fr; gap: 20px; }
+  .tool-card { grid-template-columns: 1fr; }
+  .tool-card-content { padding: 32px 24px; }
+
+  /* Experience */
+  .exp-logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-counter-row { flex-direction: column; gap: 8px; }
+  .exp-big-number { font-size: clamp(4rem, 18vw, 8rem); }
+
+  /* About */
+  .about-split { grid-template-columns: 1fr; }
+  .about-split-img { min-height: 300px; }
+  .about-split-content { padding: 40px 24px; }
+
+  /* CTA */
+  .cta-block-btns { flex-direction: column; gap: 16px; }
+  .cta-block-or { display: none; }
+
+  /* Footer */
+  .footer-layout { grid-template-columns: 1fr; }
+  .footer-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 40px 24px; }
+  .footer-connect-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px; flex-direction: row; align-items: center; gap: 16px; }
+  .footer-socials { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .footer-main-col { padding: 24px; }
+  .footer-link-cols { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Consultation */
+  .consult-inner { grid-template-columns: 1fr; }
+  .consult-card { max-width: 280px; margin: 0 auto; }
+}
+
+@media (max-width: 479px) {
+  .footer-link-cols { grid-template-columns: 1fr; }
+  .exp-logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .wwww-card { padding: 32px 20px; }
+  .solution-card { padding: 32px 20px; }
+  .tool-card-content { padding: 24px 20px; }
 }
