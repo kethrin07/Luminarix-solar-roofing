@@ -558,14 +558,16 @@ a { color: inherit; text-decoration: inherit; }
 /* ── SOLUTIONS SECTION ── */
 .section.solutions {
   background-image:
-    url("https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/62600a63c0d2cb2a11bb0564_Who%20We%20Work%20With%20Grid.svg"),
-    linear-gradient(160deg, #2d5261 0%, #1f3943 100%);
-  background-position: center, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: cover, auto;
-  color: #fff;
-  transition: background 1.4s ease;
-}
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M60 0 L120 60 L60 120 L0 60 Z' fill='none' stroke='rgba(134%2C183%2C204%2C0.07)' stroke-width='1'/%3E%3Cpath d='M60 20 L100 60 L60 100 L20 60 Z' fill='none' stroke='rgba(134%2C183%2C204%2C0.04)' stroke-width='0.8'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 25% 50%, rgba(134,183,204,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 50%, rgba(134,183,204,0.07) 0%, transparent 55%),
+    linear-gradient(160deg, #1a3040 0%, #243f50 40%, #1f3540 100%);
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 120px 120px, cover, cover, cover;
+    color: #fff;
+    padding: 60px 0;
+  }
 
 .solutions-grid {
   display: grid;
@@ -573,92 +575,77 @@ a { color: inherit; text-decoration: inherit; }
 }
 
 .solution-card {
-  padding: 60px 52px;
-  border-right: 1px solid rgba(255,255,255,0.12);
+  padding: 52px 52px 60px;
+  border-right: 1px solid rgba(255,255,255,0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  gap: 0;
 }
-.solution-card--right {
-  border-right: none;
-}
+.solution-card--right { border-right: none; }
 
-/* Image wrapper — controls the hover float */
 .solution-img-wrap {
-  margin-bottom: 36px;
+  width: 180px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.solution-img {
-  width: 220px;
-  height: auto;
-  display: block;
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              filter 0.45s ease;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.25));
-}
-.solution-card:hover .solution-img {
-  transform: translateY(-18px);
-  filter: drop-shadow(0 24px 32px rgba(0,0,0,0.4));
+  margin: 0 auto 32px;
+  flex-shrink: 0;
 }
 
-/* Solar title — orange outline */
+.solution-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.45s ease;
+}
+.solution-card:hover .solution-img {
+  transform: translateY(-12px);
+}
+
 .solar-solutions {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-family: acumin-pro-wide, sans-serif;
   font-weight: 900;
   line-height: 1.0;
-  margin-bottom: 0;
+  margin-bottom: 24px;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--color-secondary);
   -webkit-text-fill-color: transparent;
 }
-
-/* Roofing title — teal outline */
 .roofing-solutions {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-family: acumin-pro-wide, sans-serif;
   font-weight: 900;
   line-height: 1.0;
-  margin-bottom: 0;
+  margin-bottom: 24px;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--color-tertiary);
   -webkit-text-fill-color: transparent;
 }
 
-/* Body text */
 .solution-card p {
   font-size: 1rem;
   line-height: 1.65;
-  color: rgba(255,255,255,0.75);
-  max-width: 400px;
+  color: rgba(255,255,255,0.7);
+  max-width: 380px;
+  margin-bottom: 32px;
 }
-.solution-card p strong {
-  color: rgba(255,255,255,0.95);
-  font-weight: 600;
-}
+.solution-card p strong { color: rgba(255,255,255,0.95); }
 
-/* Button overrides for dark bg */
-.solution-card .button.sob.bg-primary {
-  border-color: var(--color-secondary);
-  color: var(--color-secondary);
-}
-.solution-card .button.tob.bg-primary {
-  border-color: var(--color-tertiary);
-  color: var(--color-tertiary);
-}
+.solution-card .button-wrapper { margin-top: auto; }
 
 @media (max-width: 767px) {
   .solutions-grid { grid-template-columns: 1fr; }
   .solution-card {
     border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    padding: 48px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 40px 24px 48px;
   }
   .solution-card--right { border-bottom: none; }
-  .solution-img { width: 160px; }
 }
 
 /* ── SOLUTIONS ANIMATIONS ── */
@@ -839,13 +826,13 @@ a { color: inherit; text-decoration: inherit; }
 /* ── WHO WE WORK WITH ── */
 .wwww-section {
   background-image:
-    url("https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/62600a63c0d2cb2a11bb0564_Who%20We%20Work%20With%20Grid.svg"),
-    linear-gradient(160deg, #2d5261 0%, #1f3943 100%);
-  background-position: center, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: cover, auto;
-  color: #fff;
-}
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M60 0 L120 60 L60 120 L0 60 Z' fill='none' stroke='rgba(134%2C183%2C204%2C0.07)' stroke-width='1'/%3E%3Cpath d='M60 20 L100 60 L60 100 L20 60 Z' fill='none' stroke='rgba(134%2C183%2C204%2C0.04)' stroke-width='0.8'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, #1a3040 0%, #243f50 40%, #1f3540 100%);
+    background-position: 0 0, 0 0;
+    background-repeat: repeat, no-repeat;
+    background-size: 120px 120px, cover;
+    color: #fff;
+  }
 
 /* Large statement paragraph */
 .wwww-statement {
@@ -1018,7 +1005,7 @@ a { color: inherit; text-decoration: inherit; }
 .about-split-img {
   position: relative;
   overflow: hidden;
-  min-height: 620px;
+  height: 620px;
 }
 .about-photo-svg {
   width: 100%;
