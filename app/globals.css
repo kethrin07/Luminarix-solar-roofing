@@ -364,7 +364,7 @@ a { color: inherit; text-decoration: inherit; }
   padding-bottom: 0;
 }
 
-/* LUMINARIX SVG heading */
+/* SOLARA SVG heading */
 .green-energy-heading {
   text-align: center;
   margin-bottom: -40px;
@@ -372,7 +372,7 @@ a { color: inherit; text-decoration: inherit; }
   z-index: 0;
   pointer-events: none;
 }
-.luminarix-svg {
+.solara-svg {
   width: 100%;
   height: auto;
   display: block;
@@ -380,22 +380,24 @@ a { color: inherit; text-decoration: inherit; }
   margin-bottom: -40px;
 }
 
-.luminarix-text {
+.solara-text {
   font-family: acumin-pro-wide, sans-serif;
-  font-size: clamp(60px, 12vw, 155px);
+  font-size: 155px;
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -4px;
   fill: none;
   stroke: var(--color-secondary);
-  stroke-width: 1.2px;
-  stroke-dasharray: 5000;
-  stroke-dashoffset: 5000;
+  stroke-width: 1.5px;
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
   opacity: 0;
-  transition:
-    stroke-dashoffset 4.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
-    opacity 0.4s ease 0.1s;
+  transition: stroke-dashoffset 6s cubic-bezier(0.4,0,0.2,1) 0.1s, opacity 0.5s ease 0.1s;
 }
-.reveal.revealed .luminarix-text-wrap {
+.reveal.revealed .solara-text {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+.reveal.revealed .solara-text-wrap {
   clip-path: inset(0 0% 0 0);
 }
 
@@ -444,12 +446,12 @@ a { color: inherit; text-decoration: inherit; }
 
 @media (max-width: 991px) {
   .green-energy-heading { margin-bottom: -20px; }
-  .luminarix-text { font-size: 72px; }
+  .solara-text { font-size: 72px; }
   .green-energy-grid { grid-template-columns: 1fr; gap: 40px; }
   .green-energy-svg { max-width: 340px; }
 }
 @media (max-width: 479px) {
-  .luminarix-text { font-size: 48px; }
+  .solara-text { font-size: 48px; }
 }
 
 /* ── SECTIONS ── */
@@ -548,7 +550,7 @@ a { color: inherit; text-decoration: inherit; }
   opacity: 1;
   transform: translate(0);
 }
-.green-energy-section.visible .luminarix-text {
+.green-energy-section.visible .solara-text {
   stroke-dashoffset: 0;
   opacity: 1;
 }
@@ -1595,7 +1597,7 @@ a { color: inherit; text-decoration: inherit; }
   display: block;
   margin: 0;
 }
-.reveal.revealed .luminarix-text {
+.reveal.revealed .solara-text {
   stroke-dashoffset: 0;
   opacity: 1;
 }

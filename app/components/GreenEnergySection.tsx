@@ -31,19 +31,20 @@ export default function GreenEnergySection() {
 
         <div className="green-energy-heading">
           <svg
-            viewBox="0 0 1100 180"
+            viewBox="0 0 800 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="luminarix-svg"
-            aria-label="LUMINARIX"
+            className="solara-svg"
+            aria-label="SOLARA"
+            preserveAspectRatio="xMidYMid meet"
           >
             <text
               ref={svgRef}
               x="50%"
-              y="155"
+              y="170"
               textAnchor="middle"
-              className="luminarix-text"
+              className="solara-text"
             >
-              LUMINARIX
+              SOLARA
             </text>
           </svg>
         </div>
@@ -67,7 +68,7 @@ export default function GreenEnergySection() {
             </div>
             <div className="margin-l">
               <p className="header-xl-copy weight-300-copy acumin-pro-wide">
-                Luminarix Solar &amp; Roofing is the top solar panel company for home and business energy
+                Solara is the top solar panel company for home and business energy
                 solutions. For the past over 50 years we have been offering our customers renewable and
                 sustainable energy solutions through our professional roofing and solar services. Frustrated
                 by blackouts and spikes in energy rates? Count on us to take you solar.

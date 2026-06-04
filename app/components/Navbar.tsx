@@ -11,8 +11,8 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="brand" style={{ display: "flex", alignItems: "center" }}>
           <img
-            src="	https://luminarix-media.com/lovable-uploads/9ae4ae4c-571a-4121-871c-67575f91198f.png"
-            alt="Luminarix Solar"
+            src="/Brand-Solara-image.png"
+            alt="Solara"
             className="logo"
           />
         </Link>
