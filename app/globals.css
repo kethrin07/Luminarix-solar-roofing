@@ -1173,8 +1173,11 @@ a { color: inherit; text-decoration: inherit; }
   background: linear-gradient(160deg, #2d5261 0%, #1f3943 100%);
   color: rgba(255,255,255,0.75);
 }
-
-/* 3-column layout: address | connect | content */
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
 .footer-layout {
   display: grid;
   grid-template-columns: 320px 100px 1fr;
