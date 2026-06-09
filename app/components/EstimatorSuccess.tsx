@@ -31,12 +31,14 @@ export default function EstimatorSuccess({ services }: Props) {
               Set up a meeting with one of our specialists to get started whenever you are ready!
             </p>
             {hasSolar && (
-              <a href="https://calendly.com/ameco-solar-roofing/solar-consultation" className="success-consult-btn">
+              <a href="#"
+          onClick={e => e.preventDefault()} className="success-consult-btn">
                 Schedule Your Solar Virtual Consultation
               </a>
             )}
             {hasRoofing && (
-              <a href="https://calendly.com/ameco-solar-roofing/roof-consultation" className="success-consult-btn">
+              <a href="#"
+          onClick={e => e.preventDefault()} className="success-consult-btn">
                 Schedule Your Roofing Virtual Consultation
               </a>
             )}
