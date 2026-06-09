@@ -1,31 +1,34 @@
 'use client'
 import { useState } from 'react'
-import EstimateStep1 from './EstimateStep1'
-import EstimateStep2 from './EstimateStep2'
-import EstimateStep3 from './EstimateStep3'
-import EstimateStep4 from './EstimateStep4'
-import EstimateStep5 from './EstimateStep5'
+import EstimatorAddress from './EstimatorAddress'
+import EstimatorMap from './EstimatorMap'
+import EstimatorUtilities from './EstimatorUtilities'
+import EstimatorSolarPanels from './EstimatorSolarPanels'
+import EstimatorBattery from './EstimatorBattery'
+import EstimatorRoofStyle from './EstimatorRoofStyle'
+import EstimatorRoofMeasurements from './EstimatorRoofMeasurements'
+import EstimatorContactInfo from './EstimatorContactInfo'
+import EstimatorSummary from './EstimatorSummary'
+import EstimatorSuccess from './EstimatorSuccess'
 
 function getStepList(services: string[]) {
   const hasSolar = services.includes('solar')
   const hasRoofing = services.includes('roofing')
   const steps: string[] = ['address', 'map']
   if (hasSolar) steps.push('utilities', 'solar-panels', 'battery')
-  if (hasRoofing) steps.push('roof-type', 'roof-size', 'roof-age')
+  if (hasRoofing) steps.push('roof-style', 'roof-measurements')
   steps.push('contact', 'summary')
   return steps
 }
 
-// Labels shown in the subnav bar
 const STEP_LABELS: Record<string, string> = {
   address: 'Address',
   map: 'Address',
   utilities: 'Utilities',
   'solar-panels': 'Solar Panels',
   battery: 'Battery Storage',
-  'roof-type': 'Roof Type',
-  'roof-size': 'Roof Size',
-  'roof-age': 'Roof Age',
+  'roof-style': 'Measurements',
+  'roof-measurements': 'Measurements',
   contact: 'Contact Info',
   summary: 'Cost Summary',
 }
@@ -37,64 +40,70 @@ export default function EstimatorPage() {
   const [utilities, setUtilities] = useState({ bill: '', provider: '' })
   const [panel, setPanel] = useState('')
   const [batteries, setBatteries] = useState<Record<string, number>>({})
+  const [measurements, setMeasurements] = useState<any>({})
+  const [contact, setContact] = useState<any>({})
+  const [submitted, setSubmitted] = useState(false)
 
   const steps = getStepList(services)
   const current = steps[stepIndex]
-
   const next = () => setStepIndex(i => i + 1)
   const back = () => setStepIndex(i => i - 1)
+  const navSteps = steps
+  .filter(s => s !== 'map' && s !== 'roof-measurements')
+  .map(s => STEP_LABELS[s])
+  .filter((label, index, arr) => arr.indexOf(label) === index) // remove duplicates
 
-  // Subnav labels — deduplicated, skip 'map' since it shares 'Address'
-  const navSteps = steps.filter(s => s !== 'map').map(s => STEP_LABELS[s])
+  const allData = { address, services, utilities, panel, batteries, measurements, contact }
+
+  if (submitted) return <EstimatorSuccess services={services} />
 
   return (
     <>
       {current === 'address' && (
-        <EstimateStep1
-          navSteps={navSteps}
-          activeStep="Address"
-          address={address}
-          setAddress={setAddress}
-          services={services}
-          setServices={setServices}
-          onNext={next}
-        />
+        <EstimatorAddress navSteps={navSteps} activeStep="Address"
+          address={address} setAddress={setAddress}
+          services={services} setServices={setServices}
+          onNext={next} />
       )}
       {current === 'map' && (
-        <EstimateStep2
-          navSteps={navSteps}
-          activeStep="Address"
-          address={address}
-          onBack={back}
-          onNext={next}
-        />
+        <EstimatorMap navSteps={navSteps} activeStep="Address"
+          address={address} onBack={back} onNext={next} />
       )}
       {current === 'utilities' && (
-        <EstimateStep3
-          navSteps={navSteps}
-          activeStep="Utilities"
-          onBack={back}
-          onNext={(data) => { setUtilities(data); next() }}
-        />
+        <EstimatorUtilities navSteps={navSteps} activeStep="Utilities"
+          onBack={back} onNext={(d) => { setUtilities(d); next() }} />
       )}
       {current === 'solar-panels' && (
-        <EstimateStep4
-          navSteps={navSteps}
-          activeStep="Solar Panels"
-          bill={utilities.bill}
-          onBack={back}
-          onNext={(p) => { setPanel(p); next() }}
-        />
+        <EstimatorSolarPanels navSteps={navSteps} activeStep="Solar Panels"
+          bill={utilities.bill} onBack={back}
+          onNext={(p) => { setPanel(p); next() }} />
       )}
       {current === 'battery' && (
-        <EstimateStep5
+        <EstimatorBattery navSteps={navSteps} activeStep="Battery Storage"
+          onBack={back} onNext={(b) => { setBatteries(b); next() }} />
+      )}
+      {current === 'roof-style' && (
+          <EstimatorRoofStyle navSteps={navSteps} activeStep="Measurements"
+            onBack={back} onNext={(d) => { setMeasurements({...measurements, ...d}); next() }} />
+        )}
+        {current === 'roof-measurements' && (
+          <EstimatorRoofMeasurements navSteps={navSteps} activeStep="Measurements"
+            onBack={back} onNext={(d) => { setMeasurements({...measurements, ...d}); next() }} />
+        )}
+      {current === 'contact' && (
+        <EstimatorContactInfo navSteps={navSteps} activeStep="Contact Info"
+          onBack={back} onNext={(d) => { setContact(d); next() }} />
+      )}
+      {current === 'summary' && (
+        <EstimatorSummary
           navSteps={navSteps}
-          activeStep="Battery Storage"
+          activeStep="Cost Summary"
+          services={services}
+          allData={allData}
           onBack={back}
-          onNext={(b) => { setBatteries(b); next() }}
+          onSubmit={() => setSubmitted(true)}
         />
       )}
-      {/* Roofing steps come next — to be built */}
     </>
   )
 }

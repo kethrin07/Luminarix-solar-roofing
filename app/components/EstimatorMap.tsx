@@ -1,7 +1,5 @@
 'use client'
 
-const STEPS = ['Address', 'Utilities', 'Solar Panels', 'Battery Storage', 'Contact Info', 'Cost Summary']
-
 interface Props {
   navSteps: string[]
   activeStep: string
@@ -10,7 +8,7 @@ interface Props {
   onNext: () => void
 }
 
-export default function EstimateStep2({ address, onBack, onNext }: Props) {
+export default function EstimatorMap({ navSteps, activeStep, address, onBack, onNext }: Props) {
   // Encode address for Google Maps embed
   const encodedAddress = encodeURIComponent(address)
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodedAddress}&zoom=18&maptype=satellite`
@@ -21,11 +19,8 @@ export default function EstimateStep2({ address, onBack, onNext }: Props) {
       {/* Sub-nav */}
       <div className="calc-subnav">
         <div className="calc-subnav-tab active">Solar Estimate</div>
-        {STEPS.map((step, i) => (
-          <div
-            key={step}
-            className={`calc-subnav-step${i === 0 ? ' active' : ''}`}
-          >
+        {navSteps.map(step => (
+          <div key={step} className={`calc-subnav-step${step === activeStep ? ' active' : ''}`}>
             {step}
           </div>
         ))}

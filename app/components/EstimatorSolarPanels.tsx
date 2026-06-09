@@ -1,12 +1,10 @@
 'use client'
 import { useState } from 'react'
 
-const STEPS = ['Address', 'Utilities', 'Solar Panels', 'Battery Storage', 'Contact Info', 'Cost Summary']
-
 const PANELS = [
-  { id: 'hyundai', name: 'Hyundai 440', watts: 440, img: '/panels/hyundai-440.png' },
-  { id: 'hanwha', name: 'Hanwha 430', watts: 430, img: '/panels/hanwha-430.png' },
-  { id: 'rec', name: 'REC 460', watts: 460, img: '/panels/rec-460.png' },
+  { id: 'hyundai', name: 'Hyundai 440', watts: 440, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdyATX0E0ld5lvQN1w1YTc0yLmN_XEmv-41Q&s' },
+  { id: 'hanwha', name: 'Hanwha 430', watts: 430, img: 'https://cdn4.volusion.store/ylaas-yzxhw/v/vspfiles/photos/HQC-430-QTRON-BKM-G2-HPLUS-DCA-2T.png?v-cache=1749552260' },
+  { id: 'rec', name: 'REC 460', watts: 460, img: 'https://www.solarelectricsupply.com/media/catalog/product/cache/a7b04c369a11f1759a10135521241284/r/e/rec-alpha-pure-rx-460w-solar-module.webp' },
 ]
 
 interface Props {
@@ -17,7 +15,7 @@ interface Props {
   onNext: (panel: string) => void
 }
 
-export default function EstimateStep4({ bill, onBack, onNext }: Props) {
+export default function EstimatorSolarPanels({ navSteps, activeStep, bill, onBack, onNext }: Props) {
   const [selected, setSelected] = useState('')
 
   // Calculate system size from monthly bill
@@ -32,8 +30,8 @@ export default function EstimateStep4({ bill, onBack, onNext }: Props) {
       {/* Sub-nav */}
       <div className="calc-subnav">
         <div className="calc-subnav-tab active">Solar Estimate</div>
-        {STEPS.map((step, i) => (
-          <div key={step} className={`calc-subnav-step${i === 2 ? ' active' : ''}`}>
+        {navSteps.map(step => (
+          <div key={step} className={`calc-subnav-step${step === activeStep ? ' active' : ''}`}>
             {step}
           </div>
         ))}
@@ -75,7 +73,11 @@ export default function EstimateStep4({ bill, onBack, onNext }: Props) {
 
         {/* Right: image — add your own */}
         <div className="calc-illus-col">
-          {/* Add your image here */}
+          <img
+            src="/SolarPanels.png"
+            alt="Solar Panel illustration"
+            className="calc-illustration"
+          />
         </div>
 
       </div>

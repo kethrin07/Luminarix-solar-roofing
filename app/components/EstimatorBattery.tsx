@@ -1,11 +1,9 @@
 'use client'
 import { useState } from 'react'
 
-const STEPS = ['Address', 'Utilities', 'Solar Panels', 'Battery Storage', 'Contact Info', 'Cost Summary']
-
 const BATTERIES = [
-  { id: 'powerwall', name: 'Powerwall 3', img: '/batteries/powerwall-3.png' },
-  { id: 'enphase', name: 'Enphase 10C', img: '/batteries/enphase-10c.png' },
+  { id: 'powerwall', name: 'Powerwall 3', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDNoQXkXqk_AE4atkC6Uo4uUuSMR7rqNtveQ&s' },
+  { id: 'enphase', name: 'Enphase 10C', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEZNcKJH9srZ84tPmelibruVQja8XrlLUtig&s' },
 ]
 
 interface Props {
@@ -15,7 +13,7 @@ interface Props {
   onNext: (batteries: Record<string, number>) => void
 }
 
-export default function EstimateStep5({ onBack, onNext }: Props) {
+export default function EstimatorBattery({ navSteps, activeStep, onBack, onNext }: Props) {
   const [quantities, setQuantities] = useState<Record<string, number>>({
     powerwall: 0,
     enphase: 0,
@@ -34,8 +32,8 @@ export default function EstimateStep5({ onBack, onNext }: Props) {
       {/* Sub-nav */}
       <div className="calc-subnav">
         <div className="calc-subnav-tab active">Solar Estimate</div>
-        {STEPS.map((step, i) => (
-          <div key={step} className={`calc-subnav-step${i === 3 ? ' active' : ''}`}>
+        {navSteps.map(step => (
+          <div key={step} className={`calc-subnav-step${step === activeStep ? ' active' : ''}`}>
             {step}
           </div>
         ))}
@@ -96,7 +94,11 @@ export default function EstimateStep5({ onBack, onNext }: Props) {
 
         {/* Right: image — add your own */}
         <div className="calc-illus-col">
-          {/* Add your image here */}
+          <img
+            src="/Battery.png"
+            alt="Battery illustration"
+            className="calc-illustration"
+          />
         </div>
 
       </div>

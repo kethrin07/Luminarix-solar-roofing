@@ -1,8 +1,6 @@
 'use client'
 import { useState } from 'react'
 
-const STEPS = ['Address', 'Utilities', 'Solar Panels', 'Battery Storage', 'Contact Info', 'Cost Summary']
-
 const UTILITY_PROVIDERS = [
   'Select Utility Provider',
   'Southern California Edison (SCE)',
@@ -20,7 +18,7 @@ interface Props {
   onNext: (data: { bill: string; provider: string }) => void
 }
 
-export default function EstimateStep3({ onBack, onNext }: Props) {
+export default function EstimatorUtilities({ navSteps, activeStep, onBack, onNext }: Props) {
   const [bill, setBill] = useState('')
   const [provider, setProvider] = useState('')
 
@@ -32,8 +30,8 @@ export default function EstimateStep3({ onBack, onNext }: Props) {
       {/* Sub-nav */}
       <div className="calc-subnav">
         <div className="calc-subnav-tab active">Solar Estimate</div>
-        {STEPS.map((step, i) => (
-          <div key={step} className={`calc-subnav-step${i === 1 ? ' active' : ''}`}>
+        {navSteps.map(step => (
+          <div key={step} className={`calc-subnav-step${step === activeStep ? ' active' : ''}`}>
             {step}
           </div>
         ))}
@@ -92,7 +90,11 @@ export default function EstimateStep3({ onBack, onNext }: Props) {
 
         {/* Right: image placeholder */}
         <div className="calc-illus-col">
-          {/* Add your image here */}
+          <img
+            src="/Utilities.png"
+            alt="Utility illustration"
+            className="calc-illustration"
+          />
         </div>
 
       </div>
