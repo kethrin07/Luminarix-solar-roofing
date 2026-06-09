@@ -6,6 +6,7 @@ import SolutionsSection from "./components/SolutionsSection";
 import ToolsSection from "./components/ToolsSection";
 import WhoWeWorkWith from "./components/WhoWeWorkWith";
 import ExperienceSection from "./components/ExperienceSection";
+import SolarSavingsQuiz from "./components/SolarSavingsQuiz";
 import AboutUsSection from "./components/AboutUsSection";
 import Footer from "./components/Footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <ToolsSection />
         <WhoWeWorkWith />
         <ExperienceSection />
+        <SolarSavingsQuiz />
         <AboutUsSection />
         <CtaBlock />
         <Footer />
