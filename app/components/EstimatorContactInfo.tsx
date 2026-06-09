@@ -149,9 +149,11 @@ export default function EstimatorContactInfo({ navSteps, activeStep, onBack, onN
             personal information with third parties for marketing purposes. Messaging rates vary based on
             your project needs. You can opt out at any time. Message/data rates apply. Consent is not a
             condition of purchase.{' '}
-            <a href="/terms-and-conditions" className="calc-legal-link">Terms and conditions</a>
+            <a href="#"
+              onClick={e => e.preventDefault()}className="calc-legal-link">Terms and conditions</a>
             {' '}|{' '}
-            <a href="/privacy-policy" className="calc-legal-link">Privacy Policy</a>
+            <a href="#"
+              onClick={e => e.preventDefault()} className="calc-legal-link">Privacy Policy</a>
           </p>
 
         </div>

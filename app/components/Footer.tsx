@@ -62,39 +62,45 @@ export default function Footer() {
             <div className="footer-resources-row">
               <div className="footer-col-title">Resources</div>
               <div className="footer-res-btns">
-                <a href="/home-visualizer" className="footer-res-btn">3D Home Visualizer</a>
+                <a  href="#"
+  onClick={e => e.preventDefault()} className="footer-res-btn">3D Home Visualizer</a>
                 <a href="/solar-panels-costs-calculator" className="footer-res-btn">Get An Estimate</a>
               </div>
             </div>
             <div className="footer-link-cols">
+              {/* Our Company */}
               <div className="footer-link-col">
                 <div className="footer-col-title">Our Company</div>
-                <a href="/about-us" className="footer-link">About Us</a>
-                <a href="/our-work" className="footer-link">Our Work</a>
-                <a href="/careers" className="footer-link">Careers</a>
-                <a href="/blog" className="footer-link">Blog</a>
-                <a href="/contact" className="footer-link">Contact Us</a>
-                <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
-                <a href="/terms-and-conditions" className="footer-link">Terms and Conditions</a>
+                <a href="/#about" className="footer-link">About Us</a>
+                <a href="/#experience" className="footer-link">Our Work</a>
+                <a href="#" onClick={e => e.preventDefault()} className="footer-link">Careers</a>
+                <a href="#" onClick={e => e.preventDefault()} className="footer-link">Blog</a>
+                <a href="tel:8886951205" className="footer-link">Contact Us</a>
+                <a href="#" onClick={e => e.preventDefault()} className="footer-link">Privacy Policy</a>
+                <a href="#" onClick={e => e.preventDefault()} className="footer-link">Terms and Conditions</a>
               </div>
-              <div className="footer-link-col">
-                <div className="footer-col-title">What We Do</div>
-                <a href="/our-approach" className="footer-link">Our Process</a>
-                <a href="/solutions/roofing" className="footer-link">Roofing Services</a>
-                <a href="/solutions/solar" className="footer-link">Solar Services</a>
-              </div>
+              
+                {/* What We Do */}
+                <div className="footer-link-col">
+                  <div className="footer-col-title">What We Do</div>
+                  <a href="/#solutions" className="footer-link">Our Process</a>
+                  <a href="/#solutions" className="footer-link">Roofing Services</a>
+                  <a href="/#solutions" className="footer-link">Solar Services</a>
+                </div>
+              {/* Who We Work With */}
               <div className="footer-link-col">
                 <div className="footer-col-title">Who We Work With</div>
-                <a href="/customers/residential" className="footer-link">Residential Customers</a>
-                <a href="/customers/commercial" className="footer-link">Commercial Customers</a>
+                <a href="/#who-we-work-with" className="footer-link">Residential Customers</a>
+                <a href="/#who-we-work-with" className="footer-link">Commercial Customers</a>
               </div>
             </div>
+            {/* Insights */}
             <div className="footer-link-col">
               <div className="footer-col-title">Insights &amp; Resources</div>
-              <a href="/articles-list" className="footer-link">Articles</a>
-              <a href="/near-me/valley-village-roofing-company" className="footer-link">Valley Village Roofing Company</a>
-              <a href="/blog/roofing-contractors-near-me" className="footer-link">Looking for Roofing Contractors Near you?</a>
-              <a href="/blog/best-roofing-companies-near-you" className="footer-link">How do I find the best roofing companies near me?</a>
+              <a href="#" onClick={e => e.preventDefault()} className="footer-link">Articles</a>
+              <a href="#" onClick={e => e.preventDefault()} className="footer-link">Valley Village Roofing Company</a>
+              <a href="#" onClick={e => e.preventDefault()} className="footer-link">Looking for Roofing Contractors Near you?</a>
+              <a href="#" onClick={e => e.preventDefault()} className="footer-link">How do I find the best roofing companies near me?</a>
             </div>
           </div>
 
@@ -111,8 +117,8 @@ export default function Footer() {
             </p>
           </div>
           <a
-            href="https://calendly.com/ameco-solar-roofing/solar-consultation"
-            target="_blank"
+             href="#"
+  onClick={e => e.preventDefault()}
             rel="noopener noreferrer"
             className="consult-card consult-card-anim"
           >

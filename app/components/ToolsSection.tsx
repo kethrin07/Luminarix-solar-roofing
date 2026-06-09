@@ -163,7 +163,8 @@ export default function ToolsSection() {
                 </p>
               </div>
               <div className="button-wrapper">
-                <a href="/home-visualizer">
+                <a  href="#"
+  onClick={e => e.preventDefault()}>
                   <div className="button sob bg-whitesmoke"><div>Visualize Your Home</div></div>
                   <div/>
                 </a>

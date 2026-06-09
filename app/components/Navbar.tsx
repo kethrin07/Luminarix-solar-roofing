@@ -45,7 +45,8 @@ export default function Navbar() {
               </div>
               <nav className="dropdown-list">
                 <a
-                  href="https://calendly.com/ameco-solar-roofing/solar-consultation"
+                  href="#"
+  onClick={e => e.preventDefault()}
                   className="dropdown-link-w-icon"
                 >
                   <img
@@ -56,7 +57,8 @@ export default function Navbar() {
                   <div className="dropdown-link-text">Solar Consultation</div>
                 </a>
                 <a
-                  href="https://calendly.com/ameco-solar-roofing/roof-consultation"
+                  href="#"
+  onClick={e => e.preventDefault()}
                   className="dropdown-link-w-icon"
                 >
                   <img
@@ -123,14 +125,20 @@ export default function Navbar() {
           </button>
 
           <div className="pretitle-mobile">WHO WE WORK WITH</div>
-          <a href="/customers/residential" className="nav-link">Residential Customers</a>
-          <a href="/customers/commercial" className="nav-link">Commercial Customers</a>
+          <a href="#"
+  onClick={e => e.preventDefault()}>Residential Customers</a>
+          <a href="#"
+  onClick={e => e.preventDefault()}>Commercial Customers</a>
 
           <div className="pretitle-mobile">WHAT WE DO</div>
-          <a href="/our-approach" className="nav-link">Our Approach</a>
-          <a href="/solutions/roofing" className="nav-link">Roofing Solutions</a>
-          <a href="/solutions/solar" className="nav-link">Solar Solutions</a>
-          <a href="/batterybackup" className="nav-link">Battery Backup</a>
+          <a href="#"
+  onClick={e => e.preventDefault()} className="nav-link">Our Approach</a>
+          <a href="#"
+  onClick={e => e.preventDefault()} className="nav-link">Roofing Solutions</a>
+          <a href="#"
+  onClick={e => e.preventDefault()} className="nav-link">Solar Solutions</a>
+          <a href="#"
+  onClick={e => e.preventDefault()} className="nav-link">Battery Backup</a>
 
           <div className="pretitle-mobile">OUR COMPANY</div>
           <a href="/about-us" className="nav-link">About Us</a>

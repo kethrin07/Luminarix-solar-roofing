@@ -33,7 +33,8 @@ export default function CtaBlock() {
 
           <span className="cta-block-or cta-or-anim">or</span>
 
-          <a href="https://calendly.com/ameco-solar-roofing/solar-consultation" className="button-wrapper cta-btn-right">
+          <a href="#"
+          onClick={e => e.preventDefault()} className="button-wrapper cta-btn-right">
             <div className="button tob bg-white"><div>Schedule Virtual Consultation</div></div>
             <div className="button-shadow tob-shadow" />
           </a>

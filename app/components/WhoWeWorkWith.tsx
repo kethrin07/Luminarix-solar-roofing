@@ -16,7 +16,7 @@ export default function WhoWeWorkWith() {
   }, [])
 
   return (
-    <section className="section wwww-section" ref={ref}>
+    <section className="section wwww-section" id="who-we-work-with" ref={ref}>
       <div className="wrapper">
 
         <div className="margin-m wwww-pretitle">
@@ -36,7 +36,8 @@ export default function WhoWeWorkWith() {
         </div>
 
         <div className="wwww-grid">
-          <a href="/customers/residential" className="wwww-card wwww-card--left">
+          <a  href="#"
+  onClick={e => e.preventDefault()} className="wwww-card wwww-card--left">
             <div className="wwww-card-icon-wrap">
               <img
                 src="https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/6260108933e4cc29d1a0b928_Ameco-Residential.svg"
@@ -58,7 +59,8 @@ export default function WhoWeWorkWith() {
             </div>
           </a>
 
-          <a href="/customers/commercial" className="wwww-card wwww-card--right">
+          <a  href="#"
+  onClick={e => e.preventDefault()} className="wwww-card wwww-card--right">
             <div className="wwww-card-icon-wrap">
               <img
                 src="https://cdn.prod.website-files.com/625dd4efec9d3db4cc3e6da9/626010890d256660baa42d98_Ameco-Commercial.svg"

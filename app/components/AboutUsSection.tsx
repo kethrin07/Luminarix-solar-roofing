@@ -16,7 +16,7 @@ export default function AboutUsSection() {
   }, [])
 
   return (
-    <section className="about-split" ref={ref}>
+    <section className="about-split" id="about" ref={ref}>
 
       <div className="about-split-img">
         <img
@@ -45,12 +45,14 @@ export default function AboutUsSection() {
         </div>
         <div className="about-cta-row about-buttons">
           <div className="button-wrapper">
-            <a href="/about-us">
+            <a href="#"
+              onClick={e => e.preventDefault()}>
               <div className="button sob bg-whitesmoke"><div>Learn More</div></div>
               <div/>
             </a>
           </div>
-          <a href="/careers" className="large-text-link">Join our Team</a>
+          <a href="#"
+          onClick={e => e.preventDefault()} className="large-text-link">Join our Team</a>
         </div>
       </div>
 

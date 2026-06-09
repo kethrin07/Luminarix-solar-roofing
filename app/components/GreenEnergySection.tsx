@@ -75,7 +75,8 @@ export default function GreenEnergySection() {
               </p>
             </div>
             <div className="button-wrapper">
-              <a href="/our-approach">
+              <a href="#"
+  onClick={e => e.preventDefault()}>
                 <div className="button sob bg-white"><div><span>Learn More</span></div></div>
                 <div />
               </a>

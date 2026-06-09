@@ -6,7 +6,7 @@ export default function SolutionsSection() {
   const card2Ref = useReveal(0.2)
 
   return (
-    <section className="section solutions">
+    <section className="section solutions" id="solutions">
       <div className="wrapper">
         <div className="solutions-grid">
 
@@ -29,7 +29,8 @@ export default function SolutionsSection() {
               </p>
             </div>
             <div className="button-wrapper">
-              <a href="/solutions/solar">
+              <a  href="#"
+  onClick={e => e.preventDefault()}>
                 <div className="button sob bg-primary"><div>Learn More</div></div>
                 <div/>
               </a>
@@ -55,7 +56,8 @@ export default function SolutionsSection() {
               </p>
             </div>
             <div className="button-wrapper">
-              <a href="/solutions/roofing">
+              <a  href="#"
+  onClick={e => e.preventDefault()}>
                 <div className="button tob bg-primary"><div>Learn More</div></div>
                 <div />
               </a>

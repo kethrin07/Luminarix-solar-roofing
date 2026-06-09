@@ -61,7 +61,7 @@ export default function ExperienceSection() {
   }, [])
 
   return (
-    <section className="section exp-section">
+    <section className="section exp-section" id="experience">
       <div className="wrapper">
 
         <div ref={pretitleRef as any} className="reveal">
@@ -91,7 +91,8 @@ export default function ExperienceSection() {
             What sets us apart from other solar panel installation companies is our focus on
             sustainability, quality, and customer satisfaction. PlanMySolar has
             been at the forefront of providing quality{' '}
-            <a href="/solutions/solar" style={{ textDecoration: 'underline', color: 'inherit' }}>
+            <a href="#"
+  onClick={e => e.preventDefault()} style={{ textDecoration: 'underline', color: 'inherit' }}>
               solar panel services
             </a>
             , helping thousands of homes and businesses save on their energy bills while reducing
@@ -109,7 +110,8 @@ export default function ExperienceSection() {
 
         <div ref={ctaRef as any} className="reveal">
           <div className="button-wrapper">
-            <a href="/our-work">
+            <a href="#"
+  onClick={e => e.preventDefault()}>
               <div className="button sob bg-white"><div>Browse Our Work</div></div>
               <div />
             </a>
