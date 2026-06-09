@@ -377,22 +377,23 @@ a { color: inherit; text-decoration: inherit; }
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-bottom: -40px;
+  margin-bottom: -60px;
 }
 
 .solara-text {
   font-family: acumin-pro-wide, sans-serif;
-  font-size: 155px;
+  font-size: 195px;
   font-weight: 900;
-  letter-spacing: -4px;
+  letter-spacing: 4px;
   fill: none;
   stroke: var(--color-secondary);
   stroke-width: 1.5px;
-  stroke-dasharray: 2500;
-  stroke-dashoffset: 2500;
+  stroke-dasharray: 6000;
+  stroke-dashoffset: 6000;
   opacity: 0;
   transition: stroke-dashoffset 6s cubic-bezier(0.4,0,0.2,1) 0.1s, opacity 0.5s ease 0.1s;
 }
+
 .reveal.revealed .solara-text {
   stroke-dashoffset: 0;
   opacity: 1;
@@ -2326,4 +2327,53 @@ a { color: inherit; text-decoration: inherit; }
 
 @media (max-width: 767px) {
   .calc-battery-card { width: calc(50% - 8px); }
+}
+
+/* ── BRAND TEXT ── */
+.brand-text {
+  font-family: 'Warren', sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+@font-face {
+  font-family: 'Warren';
+  src: url('/fonts/Warren.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Underline accent on Solar */
+.brand-text .brand-solar {
+  color: var(--color-secondary);
+  position: relative;
+}
+.brand-text .brand-solar::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-secondary);
+  opacity: 0.6;
+}
+
+/* Highlight "Solar" part in orange */
+.brand-text::after {
+  content: '';
+}
+
+/* ── FOOTER BRAND TEXT ── */
+.footer-brand-text {
+  font-family: 'Warren', sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  display: inline-block;
 }

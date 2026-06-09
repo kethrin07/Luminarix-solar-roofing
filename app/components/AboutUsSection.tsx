@@ -37,7 +37,7 @@ export default function AboutUsSection() {
         </div>
         <div className="about-text">
           <p className="about-statement">
-            By choosing Solara, you&apos;re not only investing in renewable energy
+            By choosing PlanMySolar, you&apos;re not only investing in renewable energy
             solutions. You are also supporting a company committed to doing good for the planet by
             harnessing the power of clean and renewable energy.
           </p>

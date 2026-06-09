@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Solar Panel Installation | Solar Panel Company | Solara",
-  description: "Explore Solara, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
+  metadataBase: new URL('https://luminarix-solar-roofing.vercel.app/'),
+  title: "Solar Panel Installation | Solar Panel Company | PlanMySolar",
+  description: "Explore PlanMySolar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
   openGraph: {
-    title: "Solar Panel Installation | Solar Panel Company | Solara",
-    description: "Explore Solara, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
+    title: "PlanMySolar | Solar Panel Installation | Solar Panel Company",
+    description: "Explore PlanMySolar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
     images: ['/logo.png'],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solar Panel Installation | Solar Panel Company | Solara",
-    description: "Explore Solara, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
-    images: ['/Brand-Solara-image.png'],
+    title: "Solar Panel Installation | Solar Panel Company | PlanMySolar",
+    description: "Explore PlanMySolar, which is on the list of the top solar panel companies in the US, find answers to your questions, and hurry up to go solar.",
+    images: ['/Brand-PlanMySolar-image.png'],
   },
 };
 

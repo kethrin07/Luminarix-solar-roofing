@@ -25,7 +25,7 @@ export default function SolutionsSection() {
               <p>
                 We understand going solar can be complicated. That&apos;s where we come in. From designing your{' '}
                 <strong>solar system</strong> to acquiring permits and getting your{' '}
-                <strong>solar panel installation</strong>{' '}rolling, Solara has you covered!
+                <strong>solar panel installation</strong>{' '}rolling, PlanMySolar has you covered!
               </p>
             </div>
             <div className="button-wrapper">

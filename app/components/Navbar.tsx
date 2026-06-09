@@ -10,11 +10,9 @@ export default function Navbar() {
       <div className="nav-wrapper">
         {/* Brand */}
         <Link href="/" className="brand" style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src="/Brand-Solara-image.png"
-            alt="Solara"
-            className="logo"
-          />
+          <span className="brand-text">
+            PlanMy<span style={{ color: 'var(--color-secondary)' }}>Solar</span>
+          </span>
         </Link>
 
         <div className="flex-right">

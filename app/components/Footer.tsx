@@ -31,11 +31,7 @@ export default function Footer() {
 
           <div className="footer-left">
             <a href="/" className="footer-logo-link">
-              <img
-                src="/Brand-Solara-image.png"
-                alt="Solara"
-                className="footer-logo"
-              />
+              <span className="footer-brand-text">PlanMySolar</span>
             </a>
             <p className="footer-addr">
               4705 Laurel Canyon Blvd. Suite 205<br />
@@ -48,7 +44,7 @@ export default function Footer() {
             <div className="footer-hr" />
             <a href="tel:8886951205" className="footer-contact">(888) 695-1205</a>
             <div className="footer-hr" />
-            <a href="mailto:info@solara.com" className="footer-contact">info@solara.com</a>
+            <a href="mailto:info@planmysolar.com" className="footer-contact">info@planmysolar.com</a>
           </div>
 
           <div className="footer-connect-col">

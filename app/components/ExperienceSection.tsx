@@ -89,7 +89,7 @@ export default function ExperienceSection() {
         <div ref={bodyRef as any} className="margin-xxl exp-body-text reveal">
           <p>
             What sets us apart from other solar panel installation companies is our focus on
-            sustainability, quality, and customer satisfaction. Solara has
+            sustainability, quality, and customer satisfaction. PlanMySolar has
             been at the forefront of providing quality{' '}
             <a href="/solutions/solar" style={{ textDecoration: 'underline', color: 'inherit' }}>
               solar panel services

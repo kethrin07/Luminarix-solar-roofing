@@ -30,7 +30,7 @@ export default function WhoWeWorkWith() {
         <div className="margin-xxl wwww-statement-wrap">
           <p className="wwww-statement">
             Join the growing community of environmentally responsible homeowners and businesses
-            by choosing Solara for your energy solutions. We provide expert
+            by choosing PlanMySolar for your energy solutions. We provide expert
             guidance and one-on-one consultations to make the switch to solar seamless and hassle free.
           </p>
         </div>

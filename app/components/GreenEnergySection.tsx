@@ -30,21 +30,21 @@ export default function GreenEnergySection() {
       <div className="wrapper">
 
         <div className="green-energy-heading">
-          <svg
-            viewBox="0 0 800 200"
+         <svg
+            viewBox="0 0 1400 260"
             xmlns="http://www.w3.org/2000/svg"
             className="solara-svg"
-            aria-label="SOLARA"
+            aria-label="PlanMySolar"
             preserveAspectRatio="xMidYMid meet"
           >
             <text
               ref={svgRef}
               x="50%"
-              y="170"
+              y="210"
               textAnchor="middle"
               className="solara-text"
             >
-              SOLARA
+              PlanMySolar
             </text>
           </svg>
         </div>
@@ -68,7 +68,7 @@ export default function GreenEnergySection() {
             </div>
             <div className="margin-l">
               <p className="header-xl-copy weight-300-copy acumin-pro-wide">
-                Solara is the top solar panel company for home and business energy
+                PlanMySolar is the top solar panel company for home and business energy
                 solutions. For the past over 50 years we have been offering our customers renewable and
                 sustainable energy solutions through our professional roofing and solar services. Frustrated
                 by blackouts and spikes in energy rates? Count on us to take you solar.
