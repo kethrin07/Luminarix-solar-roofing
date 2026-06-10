@@ -236,13 +236,13 @@ export default function SolarSavingsQuiz() {
 
                 <div className="sqz-result-actions">
                   <a
-                    href="https://calendly.com/ameco-solar-roofing/solar-consultation"
+                    href="/solar-panels-costs-calculator"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="button-wrapper"
                   >
-                    <div className="button sob bg-white"><div>Book Free Consultation</div></div>
-                    <div className="button-shadow sob-shadow" />
+                    <div className="sqz-cta-btn"><div>Calculate Your Project</div></div>
+                    <div/>
                   </a>
                   <button className="sqz-retake" onClick={reset}>Retake Quiz</button>
                 </div>
